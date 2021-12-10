@@ -50,3 +50,4 @@ ggplot(dat_to_plot, aes(x = fct_rev(Q),y = n, fill = A)) +
         axis.ticks.x=element_blank()) +
   scale_fill_manual(values=cbPalette) 
 ```
+![](barplot_eval.png)
