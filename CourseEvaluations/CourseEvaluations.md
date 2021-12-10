@@ -24,7 +24,7 @@ dat_to_plot <- dat_long %>%
                 summarise(n = n()) %>% 
                 ungroup() %>% 
                 group_by(Q) %>% 
-                summarise(relative = round(n*100/sum(n),1),
+                summarise(relative = n*100/sum(n),
                 n = n,                                                                                      
                 A = unique(A))
 
@@ -44,7 +44,7 @@ ggplot(dat_to_plot, aes(x = fct_rev(Q),y = n, fill = A)) +
   scale_y_reverse() +
   theme_classic() +
   theme(legend.position = "top",
-        plot.title = element_text(size=10),
+        plot.title = element_text(size=12),
         axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank()) +
